@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 7698955}
   - component: {fileID: 7698959}
   - component: {fileID: 7698958}
+  - component: {fileID: 7698960}
   m_Layer: 10
   m_Name: RightFoot
   m_TagString: Untagged
@@ -163,7 +164,7 @@ SphereCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7698953}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: de3c9920f2ecde14682b2b7eaf5b57ea, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -320,13 +321,31 @@ Rigidbody:
   m_GameObject: {fileID: 7698953}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Drag: 1
+  m_AngularDrag: 1
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &7698960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7698953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bfb79c351bf43d42946e79dde5f0a50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerController: {fileID: 1016672107}
+  grounded: 1
+  rb: {fileID: 0}
+  groundDistance: 0.6
+  noSelfCollision:
+    m_Bits: 1024
 --- !u!1 &81355697
 GameObject:
   m_ObjectHideFlags: 3
@@ -393,7 +412,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 81355697}
-  m_LocalRotation: {x: 0.07876072, y: 0.000000019177556, z: -0.0000000015151473, w: 0.9968936}
+  m_LocalRotation: {x: 0.07876073, y: -0.000000017064492, z: 2.3580954e-10, w: 0.9968936}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -445,6 +464,7 @@ GameObject:
   - component: {fileID: 154684325}
   - component: {fileID: 154684329}
   - component: {fileID: 154684328}
+  - component: {fileID: 154684330}
   m_Layer: 10
   m_Name: RightLeg
   m_TagString: Untagged
@@ -631,13 +651,31 @@ Rigidbody:
   m_GameObject: {fileID: 154684323}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Drag: 1
+  m_AngularDrag: 1
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &154684330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 154684323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bfb79c351bf43d42946e79dde5f0a50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerController: {fileID: 1016672107}
+  grounded: 1
+  rb: {fileID: 0}
+  groundDistance: 0.6
+  noSelfCollision:
+    m_Bits: 1024
 --- !u!1 &502855597
 GameObject:
   m_ObjectHideFlags: 0
@@ -766,7 +804,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 502855604}
-  speed: 6
+  speed: 2
 --- !u!143 &502855604
 CharacterController:
   m_ObjectHideFlags: 0
@@ -851,7 +889,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 544684870}
-  m_LocalRotation: {x: 0.11492085, y: -2.8816584e-15, z: 2.4909016e-14, w: 0.9933747}
+  m_LocalRotation: {x: 0.114920855, y: -2.7233862e-10, z: 0.0000000023540914, w: 0.9933747}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1242,8 +1280,8 @@ Rigidbody:
   m_GameObject: {fileID: 768904359}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Drag: 1
+  m_AngularDrag: 1
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -1451,8 +1489,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.09683287, y: -0.00000003530517, z: 0.0000000034348422, w: 0.9953007}
-  m_LocalPosition: {x: -1, y: 2.17, z: -5.52}
+  m_LocalRotation: {x: 0.09683287, y: 0.000000034251048, z: -0.000000003332287, w: 0.9953007}
+  m_LocalPosition: {x: 0, y: 2.17, z: -4.52}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1557,7 +1595,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 980099044}
-  m_LocalRotation: {x: 0.096832864, y: -0.00000001724557, z: -0.000000002466082, w: 0.99530065}
+  m_LocalRotation: {x: 0.09683287, y: 0.000000017599367, z: -0.0000000065365824, w: 0.99530065}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1764,8 +1802,8 @@ Rigidbody:
   m_GameObject: {fileID: 1007953548}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Drag: 1
+  m_AngularDrag: 1
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -1785,6 +1823,8 @@ GameObject:
   - component: {fileID: 1016672102}
   - component: {fileID: 1016672106}
   - component: {fileID: 1016672105}
+  - component: {fileID: 1016672107}
+  - component: {fileID: 1016672108}
   m_Layer: 10
   m_Name: Torso
   m_TagString: Untagged
@@ -1940,7 +1980,7 @@ ConfigurableJoint:
   m_RotationDriveMode: 0
   m_AngularXDrive:
     serializedVersion: 3
-    positionSpring: 180
+    positionSpring: 700
     positionDamper: 0
     maximumForce: 3.4028233e+38
   m_AngularYZDrive:
@@ -1973,13 +2013,51 @@ Rigidbody:
   m_GameObject: {fileID: 1016672100}
   serializedVersion: 2
   m_Mass: 5
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Drag: 1
+  m_AngularDrag: 1
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1016672107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1016672100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ee0a6472534e4f4ca9268ba9dbc6b48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 150
+  strafeSpeed: 100
+  jumpForce: 1000
+  noSelfCollision:
+    serializedVersion: 2
+    m_Bits: 1024
+  leftFoot: {fileID: 1921920615}
+  rightFoot: {fileID: 7698959}
+--- !u!114 &1016672108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1016672100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bfb79c351bf43d42946e79dde5f0a50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerController: {fileID: 0}
+  grounded: 1
+  rb: {fileID: 0}
+  groundDistance: 0.6
+  noSelfCollision:
+    m_Bits: 0
 --- !u!1 &1041079335
 GameObject:
   m_ObjectHideFlags: 0
@@ -2379,8 +2457,8 @@ Rigidbody:
   m_GameObject: {fileID: 1293351750}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Drag: 1
+  m_AngularDrag: 1
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -2586,8 +2664,8 @@ Rigidbody:
   m_GameObject: {fileID: 1326545507}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Drag: 1
+  m_AngularDrag: 1
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -2759,12 +2837,12 @@ ConfigurableJoint:
   m_RotationDriveMode: 0
   m_AngularXDrive:
     serializedVersion: 3
-    positionSpring: 180
+    positionSpring: 240
     positionDamper: 0
     maximumForce: 3.4028233e+38
   m_AngularYZDrive:
     serializedVersion: 3
-    positionSpring: 180
+    positionSpring: 240
     positionDamper: 0
     maximumForce: 3.4028233e+38
   m_SlerpDrive:
@@ -2792,8 +2870,8 @@ Rigidbody:
   m_GameObject: {fileID: 1392274060}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Drag: 1
+  m_AngularDrag: 1
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -2906,6 +2984,7 @@ GameObject:
   - component: {fileID: 1594753041}
   - component: {fileID: 1594753045}
   - component: {fileID: 1594753044}
+  - component: {fileID: 1594753046}
   m_Layer: 10
   m_Name: LeftLeg
   m_TagString: Untagged
@@ -3092,13 +3171,31 @@ Rigidbody:
   m_GameObject: {fileID: 1594753039}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Drag: 1
+  m_AngularDrag: 1
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1594753046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1594753039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bfb79c351bf43d42946e79dde5f0a50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerController: {fileID: 1016672107}
+  grounded: 1
+  rb: {fileID: 0}
+  groundDistance: 0.6
+  noSelfCollision:
+    m_Bits: 1024
 --- !u!1 &1672869213
 GameObject:
   m_ObjectHideFlags: 0
@@ -3134,8 +3231,8 @@ MonoBehaviour:
   m_StreamingVersion: 20170927
   m_Priority: 10
   m_StandbyUpdate: 2
-  m_LookAt: {fileID: 502855602}
-  m_Follow: {fileID: 502855602}
+  m_LookAt: {fileID: 1016672101}
+  m_Follow: {fileID: 1016672101}
   m_CommonLens: 1
   m_Lens:
     FieldOfView: 40
@@ -3223,7 +3320,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1672869213}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1, y: 2.17, z: -5.52}
+  m_LocalPosition: {x: 0, y: 2.17, z: -4.52}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 544684872}
@@ -3760,8 +3857,8 @@ Rigidbody:
   m_GameObject: {fileID: 1914630333}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Drag: 1
+  m_AngularDrag: 1
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -3781,6 +3878,7 @@ GameObject:
   - component: {fileID: 1921920611}
   - component: {fileID: 1921920615}
   - component: {fileID: 1921920614}
+  - component: {fileID: 1921920616}
   m_Layer: 10
   m_Name: LeftFoot
   m_TagString: Untagged
@@ -3809,7 +3907,7 @@ SphereCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1921920609}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: de3c9920f2ecde14682b2b7eaf5b57ea, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -3966,13 +4064,31 @@ Rigidbody:
   m_GameObject: {fileID: 1921920609}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Drag: 1
+  m_AngularDrag: 1
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1921920616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1921920609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bfb79c351bf43d42946e79dde5f0a50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerController: {fileID: 1016672107}
+  grounded: 1
+  rb: {fileID: 0}
+  groundDistance: 0.6
+  noSelfCollision:
+    m_Bits: 1024
 --- !u!1 &1963707604
 GameObject:
   m_ObjectHideFlags: 0
@@ -4172,8 +4288,8 @@ Rigidbody:
   m_GameObject: {fileID: 1963707604}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Drag: 1
+  m_AngularDrag: 1
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -4345,12 +4461,12 @@ ConfigurableJoint:
   m_RotationDriveMode: 0
   m_AngularXDrive:
     serializedVersion: 3
-    positionSpring: 180
+    positionSpring: 240
     positionDamper: 0
     maximumForce: 3.4028233e+38
   m_AngularYZDrive:
     serializedVersion: 3
-    positionSpring: 180
+    positionSpring: 240
     positionDamper: 0
     maximumForce: 3.4028233e+38
   m_SlerpDrive:
@@ -4378,8 +4494,8 @@ Rigidbody:
   m_GameObject: {fileID: 1979187613}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Drag: 1
+  m_AngularDrag: 1
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -4488,7 +4604,7 @@ PrefabInstance:
     - target: {fileID: 2312932343079538863, guid: b81c2299e80e6854c9b14086ee6bbec4,
         type: 3}
       propertyPath: m_Name
-      value: Sphere
+      value: BowlingBall
       objectReference: {fileID: 0}
     - target: {fileID: 2312932343079539028, guid: b81c2299e80e6854c9b14086ee6bbec4,
         type: 3}
