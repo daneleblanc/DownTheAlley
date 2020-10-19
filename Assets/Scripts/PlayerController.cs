@@ -117,8 +117,4 @@ public class PlayerController : MonoBehaviour
         return grounded;
 
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> develop
