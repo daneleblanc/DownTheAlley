@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR;
 
 public class PlayerController : MonoBehaviour
 {
+
     public float speed;
     public float strafeSpeed;
     public float jumpForce;
@@ -16,6 +18,9 @@ public class PlayerController : MonoBehaviour
     private float groundDistance = 0.5f;
     private Vector3 dir;
     private Rigidbody torso;
+    private ConfigurableJoint torsoJoint;
+
+    Quaternion initialAnchorRotation = new Quaternion();
 
     public void Awake()
     {
@@ -23,11 +28,33 @@ public class PlayerController : MonoBehaviour
         torso = GetComponent<Rigidbody>();
     }
     void Start()
-    {   
+    {
+        torsoJoint = myJoint;
+        
+        initialAnchorRotation = torso.transform.rotation;
+    }
+
+    public ConfigurableJoint myJoint
+    {
+        get
+        {
+            if (torsoJoint == null)
+            {
+                torsoJoint = this.gameObject.GetComponent<ConfigurableJoint>();
+            }
+            return torsoJoint;
+        }
     }
 
     private void FixedUpdate()
     {
+        float Angle = AngleCalculator.GetAngle(this.transform.forward.x, this.transform.forward.z);
+        
+
+        Quaternion targetedRotation = Quaternion.Inverse(Camera.main.transform.rotation) * initialAnchorRotation;
+        Vector3 v = targetedRotation.eulerAngles;
+        torsoJoint.targetRotation = Quaternion.Euler(0, v.y, 0);
+
         Color color = (!isGrounded()) ? Color.red : Color.green;
         Debug.DrawRay(new Vector3(0, 0.1f, 0) + leftFoot.transform.position, dir * groundDistance, color);
         if (Input.anyKey)
@@ -82,16 +109,16 @@ public class PlayerController : MonoBehaviour
         if (Physics.Raycast(new Ray(leftFootCenter, dir), out hit, groundDistance, ~noSelfCollision.value)) 
         {
             grounded = true;
-            Debug.Log("left foot is grounded");
-            Debug.Log("right foot over: " + hit.collider.name);
             return grounded;
         }
 
         Vector3 rightFootCenter = new Vector3(0, 0.1f, 0) + rightFoot.transform.position;
         grounded = Physics.Raycast(new Ray(rightFootCenter, dir), out hit, groundDistance, ~noSelfCollision.value);
-        Debug.Log("right foot is grounded? " + grounded);
-        Debug.Log("right foot over: " + hit.collider.name);
         return grounded;
 
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> develop
