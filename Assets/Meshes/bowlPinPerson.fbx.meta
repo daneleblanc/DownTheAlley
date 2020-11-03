@@ -24,6 +24,9 @@ ModelImporter:
   - first:
       74: 2136471406151654860
     second: Armature|APose (1)
+  - first:
+      74: 2667949614841947897
+    second: Walk
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -196,7 +199,7 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     globalScale: 1
-    rootMotionBoneName: Armature
+    rootMotionBoneName: Hip
     hasTranslationDoF: 0
     hasExtraRoot: 1
     skeletonHasParents: 1

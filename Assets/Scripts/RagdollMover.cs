@@ -21,17 +21,14 @@ public class RagdollMover : MonoBehaviour
 
     public void FixedUpdate()
     {
-        Debug.Log("It's at least running");
         if (!DoNotSync)
         {
             if (dummyJoint != null)
             {
 
-                //Vector3 MirrorTargetPosition = GetTargetPosition(dummyJoint.transform.position, MirrorAnchorPosition);
-                //myJoint.targetPosition = MirrorTargetPosition;
+                Vector3 MirrorTargetPosition = GetTargetPosition(dummyJoint.transform.position, MirrorAnchorPosition);
+                myJoint.targetPosition = MirrorTargetPosition;
                 Debug.DrawLine(this.transform.root.gameObject.transform.transform.position, GetMyWorldTargetPosition(), Color.yellow);
-                Debug.Log("Dummy position: " + dummyJoint.transform.position);
-                //Debug.Log("Mirror position: " + MirrorTargetPosition);
                 Quaternion MirrorTargetRotation = GetTargetRotation(dummyJoint.transform.rotation, MirrorAnchorRotation);
                 myJoint.targetRotation = MirrorTargetRotation;
             }

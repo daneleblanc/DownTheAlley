@@ -56,7 +56,7 @@ public class PlayerController : MonoBehaviour
     {
         float Angle = AngleCalculator.GetAngle(this.transform.forward.x, this.transform.forward.z);
         
-
+        // Point towards camera direction
         Quaternion targetedRotation = Quaternion.Inverse(Camera.main.transform.rotation) * initialAnchorRotation;
         Vector3 v = targetedRotation.eulerAngles;
         torsoJoint.targetRotation = Quaternion.Euler(0, v.y, 0);
@@ -83,26 +83,28 @@ public class PlayerController : MonoBehaviour
                 }
             }
 
+            // Backward movement
             if (Input.GetKey(KeyCode.S))
             {
                 Vector3 back = new Vector3(0f, 0f, -1f);
                 torso.AddRelativeForce(back * speed * 1.5f);
             }
 
+            // Left movement
             if (Input.GetKey(KeyCode.A))
             {
                 Vector3 left = new Vector3(-1f, 0f, 0f);
                 torso.AddRelativeForce(left * speed * 1.5f);
             }
 
-            
-
+            // Right movement
             if (Input.GetKey(KeyCode.D))
             {
                 Vector3 right = new Vector3(1f, 0f, 0f);
                 torso.AddRelativeForce(right * speed * 1.5f);
             }
 
+            // Jump
             if (Input.GetAxis("Jump") > 0)
             {
                 if (isGrounded())
