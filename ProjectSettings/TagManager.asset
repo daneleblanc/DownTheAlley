@@ -16,13 +16,13 @@ TagManager:
   - Player
   - Interactibles
   - Noselfcollision
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Watcher
+  - PostProcessing
+  - Boundary
+  - Ground
+  - IgnoreLight
+  - Projectile
+  - NextLevel
   - 
   - 
   - 
